@@ -4,7 +4,7 @@ const app = express();
 app.use(express.static('public'));
 
 app.get('/', (req, res, next) => {
-    res.header("Access-Control-Allow-Origin","*");    
+  res.header("Access-Control-Allow-Origin","*");    
   res.write('hello ' + req.param('j'));
   console.log(req.param('j'));
   res.end();
@@ -16,5 +16,5 @@ app.get('/jscript.js', (req, res, next) => {
   });
   
 
-app.listen(1000);
+app.listen(process.env.PORT || 3000);
 
